@@ -187,8 +187,7 @@ const renderRandomCategory = async(category, i)=>{
           x.innerHTML = `<div class="title-bar">
               <div class="section-title">${category} games</div>
               <div class="title-bar-hn">
-                <div class="back-btn"><i class="fa-solid fa-circle-chevron-left"></i></div>
-                <div class="next-btn"><i class="fa-solid fa-circle-chevron-right"></i></div>
+                <div class="title-bar-button"><button>Show All</button></div>
               </div>
             </div>
             <div id="category-game-${i}" class="new-game-flex">
