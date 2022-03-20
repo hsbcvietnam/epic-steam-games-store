@@ -265,10 +265,21 @@ header {
   margin: 0 auto;
   font-family: OpenSans, sans-serif;
 }
+.container-new-game ul li {
+  list-style: none;
+}
+.container-new-game .section-title {
+  text-transform: capitalize;
+}
 .new-game-flex {
+}
+.new-game-flex ul li {
+  list-style: none;
+}
+.new-game-flex ul {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  flex-wrap: wrap;
 }
 .game-area-slider {
   margin: 10px 15px;
