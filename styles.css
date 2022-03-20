@@ -110,7 +110,10 @@ header {
   align-items: flex-start;
 }
 .hero-img {
-  background: url(./Hinh-anh-hinh-nen-Free-Fire.jpg) no-repeat center center;
+  background: url(./Hinh-anh-hinh-nen-Free-Fire.jpg);
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
   position: relative;
   width: 82%;
   height: 430px;
@@ -160,24 +163,30 @@ header {
 }
 .featured-game ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .featured-game ul li:hover {
   background-color: rgba(126, 126, 126, 0.424);
   border-radius: 10px;
   transition: all 0.3s ease;
+  margin-left: 10px;
   padding: 10px;
 }
 .featured-game ul li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-size: 15px;
-  margin: 5px 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 10px;
   padding: 5px;
   transition: all 0.3s ease;
 }
 .featured-game ul li img {
-  width: 40px;
+  width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 5px;
