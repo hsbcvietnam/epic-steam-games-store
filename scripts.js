@@ -1,7 +1,8 @@
 window.addEventListener('load', (event) => {
   renderHeroBanner();
-  /* renderSliders();
-  renderFreeGame();
+  renderHeroImg(730);
+  renderSliders();
+  /* renderFreeGame();
   renderGameList(); */
 });
 
@@ -17,6 +18,7 @@ const getFeaturedGames = async ()=>{
     }
 }
 
+// Hero banner
 const renderHeroBanner = async()=>{
     try{
         const data = await getFeaturedGames()
@@ -65,4 +67,9 @@ const renderHeroImg = async(gameid) => {
   } catch(err){
       console.log("err", err)
   }
+}
+
+// Sliders
+const renderSliders = () =>{
+    renderNewGames
 }

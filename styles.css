@@ -110,7 +110,6 @@ header {
   align-items: flex-start;
 }
 .hero-img {
-  background: url(./Hinh-anh-hinh-nen-Free-Fire.jpg);
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: center !important;
@@ -194,8 +193,8 @@ header {
 .featured-game-name {
   margin-left: 10px;
 }
-/* main on-sale */
-.on-sale {
+/* main new-game */
+.new-game {
   margin: 20px 0;
 }
 .title-bar {
@@ -230,7 +229,7 @@ header {
   color: rgba(255, 255, 255, 0.911);
 }
 /* main game-area-slider */
-.on-sale-flex {
+.new-game-flex {
   display: flex;
   justify-content: space-around;
 }
