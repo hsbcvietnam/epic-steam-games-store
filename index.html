@@ -5,38 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epic Steam Games Store</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/6dc9b29552.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <div class="nav-bar">
-      <ul>
-        <li id="store-logo" class="nav-item">
-          <a href="#"></a>
-        </li>
-        <li id="store" class="nav-item">
-          <a href="#">Store</a>
-        </li>
-        <li id="faq" class="nav-item">
-          <a href="#">FAQ</a>
-        </li>
-        <li id="help" class="nav-item">
-          <a href="#">Help</a>
-        </li>
-        <li id="change-language" class="nav-item"></li>
-        <li id="sign-in" class="nav-item">
-          <a href="#">Sign in</a>
-        </li>
-        <li id="download" class="btn class-item">
-          <a href="#">Download</a>
-        </li>
-      </ul>
+    <div class="nav-bar"  >
+      <div class="flex1">
+        <ul >
+          <li id="store-logo" class="nav-item">
+            <a href="#"><img src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_logo.png" alt=""></a>
+          </li>
+          <li id="store" class="nav-item">
+            <a href="#">Store</a>
+          </li>
+          <li id="faq" class="nav-item">
+            <a href="#">FAQ</a>
+          </li>
+          <li id="help" class="nav-item">
+            <a href="#">Help</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex">
+        <ul>
+          <a href="" class="language"><li id="change-language"  class="fa-solid fa-globe nav-item" > </li></a>
+          <li id="sign-in" class="nav-item">
+            <a href="#">Sign in</a>
+          </li>
+          <li id="download" class="btn class-item">
+            <a href="#">Download</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </header>
-  <main>
+  <main class="container">
     <div class="top-bar">
       <ul>
-        <li id="search-bar">
-          <input id="search-box" type="text" name="search" placeholder="Search">
+        <li id="search-bar" class="flex-p">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="search-box" type="text" name="search" placeholder="Search" >
         </li>
         <li id="discover">
           <a href="#">Discover</a>
@@ -50,62 +58,322 @@
       </ul>
     </div>
     <div class="hero-banner">
-      <div id="hero-img">
-        <div class="game-logo"></div>
-        <div class="available-status">Version 2.5 update now available</div>
-        <div class="description">Genshin Impact weaboo game</div>
-        <div class="price">Free</div>
-        <div class="get-btn" class="btn">Play for free</div>
-        <div class="wishlist-btn" class="btn">Add to wishlist</div>
+      <div id="hero-img " class="hero-img">
+       <div class="mg-bt">
+        <div class="game-logo fonts"></div>
+        <div class="available-status fonts">Version 2.5 update now available</div>
+        <div class="description fonts">Genshin Impact weaboo game</div>
+        <div class="price fonts-free">Free</div>
+        <div class="flex-hero">
+          <div class="get-btn fonts1" class="btn">Play for free</div>
+          <div class="wishlist-btn fonts1" class="btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+        </div>
+       </div>
       </div>
-      <div id="featured-game-list">
+      <div id="featured-game-list" class="featured-game">
         <ul>
           <li>
-            <div class="featured-game-img"></div>
-            <div class="featured-game-name">GENSHIN IMPACT</div>
+            <div class="featured-game-img"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+            <div class="featured-game-name">Genshin Impact</div>
+          </li>
+          <li>
+            <div class="featured-game-img"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+            <div class="featured-game-name">Genshin Impact</div>
+          </li>
+          <li>
+            <div class="featured-game-img"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+            <div class="featured-game-name">Genshin Impact</div>
+          </li>
+          <li>
+            <div class="featured-game-img"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+            <div class="featured-game-name">Genshin Impact</div>
           </li>
         </ul>
       </div>
     </div>
     <div class="on-sale">
-      <div class="title-bar">
-        <div class="section-title">Games on sale</div>
-        <div class="back-btn">&lt;</div>
-        <div class="next-btn">&gt;</div>
+      <div>
+        <div class="title-bar">
+          <div class="section-title">Games on sale</div>
+          <div class="title-bar-hn">
+            <div class="back-btn"><i class="fa-solid fa-circle-chevron-left"></i></div>
+            <div class="next-btn"><i class="fa-solid fa-circle-chevron-right"></i></div>
+          </div>
+        </div>
+        <div class="on-sale-flex">
+          <div class="game-area-slider">
+            <div class="game-img-medium"><img src="./anh-free-fire-1.jpg" alt=""></div>
+            <div class="game-name">Crysis 3 Remastered</div>
+            <div class="game-flex">
+              <div >
+                <div class="game-sale">-40%</div>
+                <div class="game-status">New to Epic</div>
+              </div>
+              <div>
+                <div class="old-price">&#8363;280,000</div>
+                <div class="new-price">&#8363;168,000</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="game-area-slider">
+            <div class="game-img-medium"><img src="./anh-free-fire-1.jpg" alt=""></div>
+            <div class="game-name">Crysis 3 Remastered</div>
+            <div class="game-flex">
+              <div >
+                <div class="game-sale">-40%</div>
+                <div class="game-status">New to Epic</div>
+              </div>
+              <div>
+                <div class="old-price">&#8363;280,000</div>
+                <div class="new-price">&#8363;168,000</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="game-area-slider">
+            <div class="game-img-medium"><img src="./anh-free-fire-1.jpg" alt=""></div>
+            <div class="game-name">Crysis 3 Remastered</div>
+            <div class="game-flex">
+              <div >
+                <div class="game-sale">-40%</div>
+                <div class="game-status">New to Epic</div>
+              </div>
+              <div>
+                <div class="old-price">&#8363;280,000</div>
+                <div class="new-price">&#8363;168,000</div>
+              </div>
+            </div>
+          </div>
+          <div class="game-area-slider">
+            <div class="game-img-medium"><img src="./anh-free-fire-1.jpg" alt=""></div>
+            <div class="game-name">Crysis 3 Remastered</div>
+            <div class="game-flex">
+              <div >
+                <div class="game-sale">-40%</div>
+                <div class="game-status">New to Epic</div>
+              </div>
+              <div>
+                <div class="old-price">&#8363;280,000</div>
+                <div class="new-price">&#8363;168,000</div>
+              </div>
+            </div>
+          </div><div class="game-area-slider">
+            <div class="game-img-medium"><img src="./anh-free-fire-1.jpg" alt=""></div>
+            <div class="game-name">Crysis 3 Remastered</div>
+            <div class="game-flex">
+              <div >
+                <div class="game-sale">-40%</div>
+                <div class="game-status">New to Epic</div>
+              </div>
+              <div>
+                <div class="old-price">&#8363;280,000</div>
+                <div class="new-price">&#8363;168,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="game-area-slider">
-        <div class="game-img-medium"></div>
-        <div class="game-name">Crysis 3 Remastered</div>
-        <div class="game-sale">-40%</div>
-        <div class="game-status">New to Epic</div>
-        <div class="old-price">&#8363;280,000</div>
-        <div class="new-price">&#8363;168,000</div>
-      </div>
+      
+      
     </div>
     <div class="new-update">
       <ul>
         <li>
-          <div class="game-img-big"></div>
-          <div class="name">Fortnite</div>
-          <div class="description">Crysis 3 Remastered</div>
-          <div class="price">Play for free</div>
+          <div class="game-img-big"><img src="./tang-hap-hanh-na_n-game-wallpaper-aap-nhayt-32.jpg" alt=""></div>
+          <div class="game-pd">
+            <div class="name">Fortnite</div>
+            <div class="description">Crysis 3 Remastered</div>
+            <div class="price">Play for free</div>
+          </div>
+        </li>
+
+        <li>
+          <div class="game-img-big"><img src="./tang-hap-hanh-na_n-game-wallpaper-aap-nhayt-32.jpg" alt=""></div>
+          <div class="game-pd">
+            <div class="name">Fortnite</div>
+            <div class="description">Crysis 3 Remastered</div>
+            <div class="price">Play for free</div>
+          </div>
         </li>
       </ul>
+     
+      
     </div>
     <div class="free-games">
-      <div class="title-bar">
+      <div class="title-bar-free">
         <div class="section-title">Free Games</div>
-        <div class="btn">VIEW MORE</div>
+        <div class="btn-view">VIEW MORE</div>
       </div>
       <div class="game-area">
-        <div class="game-img-big"></div>
-        <div class="available-status">FREE NOW</div>
-        <div class="game-name">In Sound Mind</div>
-        <div class="free-status">Free Now</div>
-        <div class="free-period">Mar 24 at 10:00PM</div>
+        <ul>
+          <li> 
+              <div class="game-img-free"><img src="./tang-hap-hanh-na_n-game-wallpaper-aap-nhayt-32.jpg" alt=""></div>
+              <div class="available-status-free">FREE NOW</div>
+              <div class="game-name-free">In Sound Mind</div>
+              <div class="free-period">Mar 24 at 10:00PM</div>
+          </li>
+          <li>
+            <div class="game-img-free"><img src="./tang-hap-hanh-na_n-game-wallpaper-aap-nhayt-32.jpg" alt=""></div>
+            <div class="available-status-free">FREE NOW</div>
+            <div class="game-name-free">In Sound Mind</div>
+            <div class="free-period">Mar 24 at 10:00PM</div>
+          </li>
+        </ul> 
       </div>
     </div>
+
+
+    <div class="list-all-game">
+        <div>
+          <div class="list-sorties">
+            <div class="list-view-sorties">
+            <div class="text-sorties">Nouvelles sorties</div>
+            <div class="btn-sorties">view all</div>
+            </div>
+          </div>  
+       
+          <div class="list-flex-text">
+            <div class="boder-line"></div>
+            <ul>
+              <li >
+                  <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                  <div class="list-text-sorties">
+                    <p>syberia: The World Before</p>
+                    <p class="list-p">&#8363;373,000</p>
+                  </div>
+              </li>
+              <li >
+                <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                <div class="list-text-sorties">
+                  <p>syberia: The World Before</p>
+                  <p class="list-p">&#8363;373,000</p>
+                </div>
+              </li>
+              <li >
+                <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                <div class="list-text-sorties">
+                  <p>syberia: The World Before</p>
+                  <p class="list-p">&#8363;373,000</p>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="list-sorties">
+            <div class="list-view-sorties">
+            <div class="text-sorties">Nouvelles sorties</div>
+            <div class="btn-sorties">view all</div>
+            </div>
+          </div>  
+       
+          <div class="list-flex-text">
+            <div class="boder-line"></div>
+            <ul>
+              <li >
+                  <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                  <div class="list-text-sorties">
+                    <p>syberia: The World Before</p>
+                    <p class="list-p">&#8363;373,000</p>
+                  </div>
+              </li>
+              <li >
+                <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                <div class="list-text-sorties">
+                  <p>syberia: The World Before</p>
+                  <p class="list-p">&#8363;373,000</p>
+                </div>
+              </li>
+              <li >
+                <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                <div class="list-text-sorties">
+                  <p>syberia: The World Before</p>
+                  <p class="list-p">&#8363;373,000</p>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      
+        <div>
+          <div class="list-sorties">
+            <div class="list-view-sorties">
+            <div class="text-sorties">Nouvelles sorties</div>
+            <div class="btn-sorties">view all</div>
+            </div>
+          </div>  
+       
+          <div class="list-flex-text">
+            <div class="boder-line"></div>
+            <ul>
+              <li >
+                  <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                  <div class="list-text-sorties">
+                    <p>syberia: The World Before</p>
+                    <p class="list-p">&#8363;373,000</p>
+                  </div>
+              </li>
+              <li >
+                <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                <div class="list-text-sorties">
+                  <p>syberia: The World Before</p>
+                  <p class="list-p">&#8363;373,000</p>
+                </div>
+              </li>
+              <li >
+                <div class="list-img-sorties"><img src="./hinh-anh-free-fire2.jpg" alt=""></div>
+                <div class="list-text-sorties">
+                  <p>syberia: The World Before</p>
+                  <p class="list-p">&#8363;373,000</p>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="flex-catalogue">
+        <div class="img-catalogue"><img src="./0102_6cZskIYrcW1iWdWh.jpg" alt=""></div>
+        <div class="text-catalogue">
+          <p class="text-p"><a href="#">Explorez notre catalogue</a></p>
+          Trouvez votre prochain jeu préféré en cherchant par genre
+          <div class="more-catalogue">Read More</div>
+        </div>
+    </div>
   </main>
+
+
+  <footer>
+    <div class="container-footer">
+      <div class="footer-flex">
+        <div class="footer-top">
+          <a href="https://www.facebook.com/epicgames"><i class="fa fa-instagram " > </i></a>
+          <a href="https://www.youtube.com/channel/UC5Qk8mWBwtMyEj7iQQYRk1A"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="icon-chevron"><a href="# "><i class="fa-solid fa-circle-chevron-up "></i></a></div>
+      </div>
+      <div class="line-footer"></div>
+      <div class="footer-bot">
+        <div class="footer-span">
+          <span>© 2022, steam Games, Inc. Tous droits réservés. steam, steam Games, le logo Epic Games, Fortnite, le logo Fortnite, Unreal, Unreal Engine, le logo Unreal Engine, Unreal Tournament et le logo Unreal Tournament sont des marques ou des marques déposées d'Epic Games, Inc. aux États-Unis d'Amérique et ailleurs. Les autres marques ou noms de produit appartiennent à leurs propriétaires respectifs. En dehors des États-Unis, les transactions sont gérées par steam Games International, S.à r.l.  </span>
+        </div>
+        <div class="footer-flex-logo">
+          <div  class="footer-bot-1">
+            <a href=""><p> Emplois</p></a>
+            <a href=""><p> Steamworks</p></a>
+            <a href=""><p>  Distribution Steam</p></a>
+            <a href=""><p>Support</p></a>
+          </div>
+          <div class="footer-logo"><img src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_logo.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </footer>
   <script src="scripts.js"></script>
 </body>
 </html>
