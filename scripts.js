@@ -3,7 +3,6 @@ window.addEventListener('load', (event) => {
   renderHeroImg(730);
   renderSliders();
   renderFreeGame();
-  /* renderGameList(); */
 });
 
 document.getElementById("search-btn").addEventListener("click", () =>{
@@ -360,6 +359,9 @@ const renderSearchResult = async() => {
         <div>
           <div class="title-bar">
             <div class="section-title">Search result:</div>
+            <div class="title-bar-hn">
+              <div id="show-button" class="title-bar-button"><a href="index.html"><button>Go Back</button></a></div>
+            </div>
           </div>
           <div id="new-games" class="new-game-flex">
             <ul>
