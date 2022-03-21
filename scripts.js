@@ -335,6 +335,7 @@ const renderGameDetails = async(appid) => {
       </div>`
     }
     popupGame.appendChild(x)
+    document.getElementById("overlay").style.background = `url(${data.data.background})`
     document.getElementById("overlay").style.visibility = "visible"
   }catch(err){
       console.log("err", err)
