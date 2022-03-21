@@ -350,5 +350,10 @@ const closePopup = () => {
 
 // Search
 const renderSearchResult = async() => {
-
+  try {
+    const data = getGameBySearch()
+    
+  } catch(err){
+      console.log("err", err)
+  }
 }
