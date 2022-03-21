@@ -3,6 +3,7 @@ window.addEventListener('load', (event) => {
   renderHeroImg(730);
   renderSliders();
   renderFreeGame();
+  /* renderGameList(); */
 });
 
 document.getElementById("search-btn").addEventListener("click", () =>{
@@ -313,8 +314,10 @@ const renderGameDetails = async(appid) => {
             <div class="game-price">Free to play</div>
             <div class="game-category">Category: ${data.data.genres}</div>
             <div class="game-developer">Developer: ${data.data.developer}</div>
-            <div class="get-btn fonts1 btn">Get this game</div>
-            <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+            <div class="flex-popup">
+            <div class="get-btn-1 fonts1 btn">Get this game</div>
+            <div class="wishlist-btn-1 fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+            </div>
           </div>
         </div>
       </div>`
@@ -328,8 +331,8 @@ const renderGameDetails = async(appid) => {
             <div class="game-price">Price: $ ${data.data.price}</div>
             <div class="game-category">Category: ${data.data.genres}</div>
             <div class="game-developer">Developer: ${data.data.developer}</div>
-            <div class="get-btn fonts1 btn">Get this game</div>
-            <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+            <div class="flex-popup"> <div class="get-btn-1 fonts1 btn">Get this game</div>
+            <div class="wishlist-btn-1 fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div></div>
           </div>
         </div>
       </div>`
@@ -350,66 +353,8 @@ const closePopup = () => {
 // Search
 const renderSearchResult = async() => {
   try {
-    const data = await getGameBySearch()
-    const main = document.getElementById("main")
-    main.innerHTML = ""
-    const x = document.createElement("div")
-    x.innerHTML = `<div class="container-new-game">
-      <div class="new-game ">
-        <div>
-          <div class="title-bar">
-            <div class="section-title">Search result:</div>
-            <div class="title-bar-hn">
-              <div id="show-button" class="title-bar-button"><a href="index.html"><button>Go Back</button></a></div>
-            </div>
-          </div>
-          <div id="new-games" class="new-game-flex">
-            <ul>
-              <li>
-                <div class="game-area-slider">
-                  <div class="game-img-medium"></div>
-                  <div class="game-name"></div>
-                  <div class="game-flex">
-                    <div>
-                      <div class="new-price"></div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>`
-    main.appendChild(x)
-    const newGames = document.getElementById("new-games")
-    const ulNewGames = newGames.children[0]
-    ulNewGames.innerHTML = ""
-    for (i = 0; i < 5; i++) {
-      const y = document.createElement("li")
-      if (data.data[i].price === 0) {
-        y.innerHTML = `<div class="game-area-slider">
-          <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
-          <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
-          <div class="game-flex">
-            <div>
-              <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">Free to play</div>
-            </div>
-          </div>
-        </div>`
-      } else {
-        y.innerHTML = `<div class="game-area-slider">
-          <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
-          <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
-          <div class="game-flex">
-            <div>
-              <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">$ ${data.data[i].price}</div>
-            </div>
-          </div>
-        </div>`
-      }
-      ulNewGames.appendChild(y)
-    }
+    const data = getGameBySearch()
+
   } catch(err){
       console.log("err", err)
   }
