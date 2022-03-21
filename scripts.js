@@ -6,6 +6,10 @@ window.addEventListener('load', (event) => {
   /* renderGameList(); */
 });
 
+document.getElementById("search-btn").addEventListener("click", () =>{
+    renderSearchResult()
+})
+
 // Get game list
 const getFeaturedGames = async ()=>{
     try{
@@ -24,6 +28,18 @@ const getGameByCategory = async (category)=>{
         const res = await fetch(url)
         const data = await res.json()
         return data
+    } catch(err) {
+        console.log("err", err)
+    }
+}
+
+const getGameBySearch = async ()=>{
+    try{
+      const query = document.getElementById("search-box").value
+      const url = `https://cs-steam-api.herokuapp.com/games?q=${query}`
+      const res = await fetch(url)
+      const data = await res.json()
+      return data
     } catch(err) {
         console.log("err", err)
     }
@@ -330,4 +346,9 @@ const closePopup = () => {
   const popupGame = document.getElementById("popup-game")
   popupGame.innerHTML = ""
   document.getElementById("overlay").style.visibility = "hidden"
+}
+
+// Search
+const renderSearchResult = async() => {
+
 }
