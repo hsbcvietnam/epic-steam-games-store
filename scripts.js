@@ -351,8 +351,63 @@ const closePopup = () => {
 // Search
 const renderSearchResult = async() => {
   try {
-    const data = getGameBySearch()
-
+    const data = await getGameBySearch()
+    const main = document.getElementById("main")
+    main.innerHTML = ""
+    const x = document.createElement("div")
+    x.innerHTML = `<div class="container-new-game">
+      <div class="new-game ">
+        <div>
+          <div class="title-bar">
+            <div class="section-title">Search result:</div>
+          </div>
+          <div id="new-games" class="new-game-flex">
+            <ul>
+              <li>
+                <div class="game-area-slider">
+                  <div class="game-img-medium"></div>
+                  <div class="game-name"></div>
+                  <div class="game-flex">
+                    <div>
+                      <div class="new-price"></div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>`
+    main.appendChild(x)
+    const newGames = document.getElementById("new-games")
+    const ulNewGames = newGames.children[0]
+    ulNewGames.innerHTML = ""
+    for (i = 0; i < 5; i++) {
+      const y = document.createElement("li")
+      if (data.data[i].price === 0) {
+        y.innerHTML = `<div class="game-area-slider">
+          <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
+          <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
+          <div class="game-flex">
+            <div>
+              <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">Free to play</div>
+            </div>
+          </div>
+        </div>`
+      } else {
+        y.innerHTML = `<div class="game-area-slider">
+          <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
+          <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
+          <div class="game-flex">
+            <div>
+              <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">$ ${data.data[i].price}</div>
+            </div>
+          </div>
+        </div>`
+      }
+      ulNewGames.appendChild(y)
+    }
   } catch(err){
       console.log("err", err)
   }
