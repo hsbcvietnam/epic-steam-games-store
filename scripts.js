@@ -108,9 +108,9 @@ const renderHeroImg = async(gameid) => {
       if (game.price === 0) {
         x.innerHTML = `<div class="mg-bt">
         <div class="description fonts">${game.description}</div>
-        <div class="fonts-free">Free</div>
+        <div class="fonts-free" onclick="renderGameDetails(${game.appid})">Free</div>
         <div class="flex-hero">
-          <div class="get-btn fonts1 btn">Play for free</div>
+          <div class="get-btn fonts1 btn" onclick="renderGameDetails(${game.appid})">Play for free</div>
           <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
         </div>
         </div>`
@@ -118,7 +118,7 @@ const renderHeroImg = async(gameid) => {
         x.innerHTML = `<div class="mg-bt">
         <div class="description fonts">${game.description}</div>
         <div class="flex-hero">
-          <div class="get-btn fonts1 btn">$ ${game.price}</div>
+          <div class="get-btn fonts1 btn" onclick="renderGameDetails(${game.appid})">$ ${game.price}</div>
           <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
         </div>
         </div>`
@@ -352,7 +352,7 @@ const closePopup = () => {
 const renderSearchResult = async() => {
   try {
     const data = getGameBySearch()
-    
+
   } catch(err){
       console.log("err", err)
   }
