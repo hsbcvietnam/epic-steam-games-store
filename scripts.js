@@ -2,8 +2,8 @@ window.addEventListener('load', (event) => {
   renderHeroBanner();
   renderHeroImg(730);
   renderSliders();
-  /* renderFreeGame();
-  renderGameList(); */
+  renderFreeGame();
+  /* renderGameList(); */
 });
 
 // Get game list
@@ -51,6 +51,18 @@ const getCategory = async ()=>{
     }
 }
 
+const getSingleGame = async (appid)=>{
+    try{
+        const url = `https://cs-steam-api.herokuapp.com/single-game/${appid}`
+        const res = await fetch(url)
+        const data = await res.json()
+        console.log(data)
+        return data
+    } catch(err) {
+        console.log("err", err)
+    }
+}
+
 // Hero banner
 const renderHeroBanner = async()=>{
     try{
@@ -80,19 +92,18 @@ const renderHeroImg = async(gameid) => {
       if (game.price === 0) {
         x.innerHTML = `<div class="mg-bt">
         <div class="description fonts">${game.description}</div>
-        <div class="price fonts-free">Free</div>
+        <div class="fonts-free">Free</div>
         <div class="flex-hero">
-          <div class="get-btn fonts1" class="btn">Play for free</div>
-          <div class="wishlist-btn fonts1" class="btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+          <div class="get-btn fonts1 btn">Play for free</div>
+          <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
         </div>
         </div>`
       } else {
         x.innerHTML = `<div class="mg-bt">
         <div class="description fonts">${game.description}</div>
-        <div class="price fonts-free">$ ${game.price}</div>
         <div class="flex-hero">
-          <div class="get-btn fonts1" class="btn">$ ${game.price}</div>
-          <div class="wishlist-btn fonts1" class="btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+          <div class="get-btn fonts1 btn">$ ${game.price}</div>
+          <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
         </div>
         </div>`
       }
@@ -118,21 +129,21 @@ const renderNewGames = async()=>{
         const x = document.createElement("li")
         if (data.data[i].price === 0) {
           x.innerHTML = `<div class="game-area-slider">
-            <div class="game-img-medium"><img src="${data.data[i].header_image}" alt=""></div>
-            <div class="game-name">${data.data[i].name}</div>
+            <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
+            <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
             <div class="game-flex">
               <div>
-                <div class="new-price">Free to play</div>
+                <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">Free to play</div>
               </div>
             </div>
           </div>`
         } else {
           x.innerHTML = `<div class="game-area-slider">
-            <div class="game-img-medium"><img src="${data.data[i].header_image}" alt=""></div>
-            <div class="game-name">${data.data[i].name}</div>
+            <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
+            <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
             <div class="game-flex">
               <div>
-                <div class="new-price">$ ${data.data[i].price}</div>
+                <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">$ ${data.data[i].price}</div>
               </div>
             </div>
           </div>`
@@ -154,21 +165,21 @@ const renderGameByCategory = async(i, item)=>{
         const x = document.createElement("li")
         if (data.data[i].price === 0) {
           x.innerHTML = `<div class="game-area-slider">
-            <div class="game-img-medium"><img src="${data.data[i].header_image}" alt=""></div>
-            <div class="game-name">${data.data[i].name}</div>
+            <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
+            <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
             <div class="game-flex">
               <div>
-                <div class="new-price">Free to play</div>
+                <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">Free to play</div>
               </div>
             </div>
           </div>`
         } else {
           x.innerHTML = `<div class="game-area-slider">
-            <div class="game-img-medium"><img src="${data.data[i].header_image}" alt=""></div>
-            <div class="game-name">${data.data[i].name}</div>
+            <div class="game-img-medium" onclick="renderGameDetails(${data.data[i].appid})"><img src="${data.data[i].header_image}" alt=""></div>
+            <div class="game-name" onclick="renderGameDetails(${data.data[i].appid})">${data.data[i].name}</div>
             <div class="game-flex">
               <div>
-                <div class="new-price">$ ${data.data[i].price}</div>
+                <div class="new-price" onclick="renderGameDetails(${data.data[i].appid})">$ ${data.data[i].price}</div>
               </div>
             </div>
           </div>`
@@ -239,4 +250,84 @@ const getRandomNumbers = () => {
   arr.push(b)
   arr.push(c)
   return arr
+}
+
+// Free game box
+const renderFreeGame = async()=>{
+    try{
+        const data = await getFeaturedGames()
+        const featuredGameList = document.getElementById("feature-game-2")
+        const ulFeaturedGameList = featuredGameList.children[0]
+        ulFeaturedGameList.innerHTML=""
+        for (i = 5; i < 7; i++) {
+          const x = document.createElement("li")
+          if (data.data[i].price === 0) {
+            x.innerHTML = `<div class="game-img-big"><img src="${data.data[i].header_image}" alt=""></div>
+            <div class="game-pd">
+              <div class="name">${data.data[i].name}</div>
+              <div class="price-game-free">Play for free</div>
+            </div>`;
+          } else {
+            x.innerHTML = `<div class="game-img-big"><img src="${data.data[i].header_image}" alt=""></div>
+            <div class="game-pd">
+              <div class="name">${data.data[i].name}</div>
+              <div class="price-game-free">${data.data[i].price}</div>
+            </div>`;
+          }
+          ulFeaturedGameList.appendChild(x)
+        }
+    } catch(err){
+        console.log("err", err)
+    }
+}
+
+// Popup game details
+const renderGameDetails = async(appid) => {
+  try {
+    const data = await getSingleGame(appid)
+    const popupGame = document.getElementById("popup-game")
+    popupGame.innerHTML = ""
+    const x = document.createElement("div")
+    if (data.data.price === 0) {
+      x.innerHTML = `<div id="overlay">
+        <div class="popup">
+          <div class="close" onclick="closePopup()">&times;</div>
+          <div class="content_popup">
+            <div class="game-img-big"><img src="${data.data.header_image}" alt=""></div>
+            <div class="game-name">${data.data.name}</div>
+            <div class="game-price">Free to play</div>
+            <div class="game-category">Category: ${data.data.genres}</div>
+            <div class="game-developer">Developer: ${data.data.developer}</div>
+            <div class="get-btn fonts1 btn">Get this game</div>
+            <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+          </div>
+        </div>
+      </div>`
+    } else {
+      x.innerHTML = `<div id="overlay">
+        <div class="popup">
+          <div class="close" onclick="closePopup()">&times;</div>
+          <div class="content_popup">
+            <div class="game-img-big"><img src="${data.data.header_image}" alt=""></div>
+            <div class="game-name">${data.data.name}</div>
+            <div class="game-price">Price: $ ${data.data.price}</div>
+            <div class="game-category">Category: ${data.data.genres}</div>
+            <div class="game-developer">Developer: ${data.data.developer}</div>
+            <div class="get-btn fonts1 btn">Get this game</div>
+            <div class="wishlist-btn fonts1 btn"><i class="fa-solid fa-circle-plus"></i>Add to wishlist</div>
+          </div>
+        </div>
+      </div>`
+    }
+    popupGame.appendChild(x)
+    document.getElementById("overlay").style.visibility = "visible"
+  }catch(err){
+      console.log("err", err)
+  }
+}
+
+const closePopup = () => {
+  const popupGame = document.getElementById("popup-game")
+  popupGame.innerHTML = ""
+  document.getElementById("overlay").style.visibility = "hidden"
 }
