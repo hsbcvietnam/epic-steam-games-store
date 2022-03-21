@@ -145,6 +145,9 @@ header {
 .top-bar ul li a:hover {
   color: aqua;
 }
+.top-bar ul li:hover {
+  color: aqua;
+}
 
 /* main hero-banner */
 .hero-banner {
@@ -402,8 +405,8 @@ header {
 .description {
   font-size: 14px;
   margin-bottom: 5px;
-  color: rgb(228, 228, 228);
-  background-color: #aaaaaacc;
+  color: rgb(243, 243, 243);
+  background-color: #aaaaaa93;
   border-radius: 5px;
   padding: 10px;
 }
@@ -413,6 +416,7 @@ header {
 }
 .price-game-free {
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .price-game-free:hover {
   padding: 5px 0;
@@ -436,11 +440,14 @@ header {
   margin: 50px auto;
   padding: 50px;
   background: #fff;
-  border-radius: 5px;
-  width: 80%;
+  border-radius: 10px;
+  width: 50%;
   position: relative;
   transition: all 5s ease-in-out;
-  color: #000000;
+  color: white;
+  background-color: #202020;
+  font-family: OpenSans, sans-serif;
+  font-size: 14px;
 }
 .popup .close {
   position: absolute;
@@ -453,11 +460,20 @@ header {
   color: #333;
 }
 .popup .close:hover {
-  color: #06D85F;
+  color: #06d85f;
 }
 .popup .content_popup {
   max-height: 500px;
   overflow: auto;
+}
+.game-platform {
+  margin: 10px 0;
+}
+.game-developer {
+  margin: 10px 0;
+}
+.game-price {
+  margin: 10px 0;
 }
 /*  */
 
@@ -716,6 +732,10 @@ footer {
 }
 .icon-tw:hover {
   color: rgb(53, 116, 252);
+}
+#popup-game {
+  width: 500px;
+  text-align: center;
 }
 
 @media only screen and (max-width: 46.1875em) {
