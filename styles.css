@@ -20,7 +20,7 @@ header {
   font-family: OpenSans, sans-serif;
   position: fixed;
   width: 100%;
-  background-color: rgb(59, 59, 59);
+  background-color: rgba(59, 59, 59, 0.85);
   z-index: 999;
 }
 .nav-bar {
@@ -39,21 +39,51 @@ header {
 .flex ul {
   display: flex;
   align-items: center;
+  align-items: center;
 }
 .flex ul li {
   padding: 0 25px;
+  font-size: 18px;
 }
 .nav-bar ul li a {
   text-decoration: none;
   color: white;
   font-size: 17px;
 }
-.nav-bar ul li a:hover {
-  color: aqua;
+.nav-item {
+  position: relative;
 }
-.nav-bar ul li:hover {
-  color: aqua;
+
+/* hover nav-item */
+.nav-item a:before,
+.nav-item a:after {
+  content: "";
+  border-bottom: solid 1px aqua;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  margin: 0;
 }
+
+.nav-item a:before {
+  left: 30%;
+}
+.nav-item a:after {
+  right: 30%;
+}
+
+.nav-item a:hover:before,
+.nav-item a:hover:after {
+  width: 50%;
+}
+
+.nav-item a:before,
+.nav-item a:after {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/*  */
 .nav-bar ul {
   list-style: none;
 }
@@ -185,6 +215,8 @@ header {
   font-size: 20px;
   width: 5%;
   padding: 5px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 .fonts-free:hover {
   /* width: 10%;
@@ -192,6 +224,7 @@ header {
   background-color: aqua;
   color: rgb(61, 61, 61);
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 .fonts1 {
   font-size: 18px;
@@ -689,6 +722,9 @@ footer {
   header {
     width: 100%;
   }
+  .container {
+    width: 420px;
+  }
   .nav-bar {
     justify-content: space-between;
   }
@@ -734,7 +770,7 @@ footer {
   /* ---- */
 
   .hero-img {
-    width: 25%;
+    width: 75%;
     height: 300px;
   }
   .mg-bt {
@@ -744,10 +780,13 @@ footer {
     font-size: 10px;
   }
   .fonts1 {
+    padding: 8px 10px;
     font-size: 10px;
   }
   .price {
     font-size: 15px;
+    padding-left: 12px;
+    padding-right: 30px;
   }
   .hero-banner {
     justify-content: flex-start;
@@ -776,5 +815,12 @@ footer {
   .img-catalogue img {
     width: 200px;
     height: 300px;
+  }
+  .container-new-game {
+    width: 414px;
+    margin: 0 auto;
+  }
+  .new-game-flex ul {
+    width: 99%;
   }
 }
